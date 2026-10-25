@@ -11,34 +11,23 @@ const projects = [
     subtitle: 'Ask any question about hospital data — in plain English',
     liveUrl: 'http://35.175.226.154:8501/',
     dataset: 'Custom clinical dataset with 10,000+ patient visits, 9,649 patients, 500 physicians across 30 hospitals — stored in a graph database (Neo4j).',
-    description: `Imagine being able to ask a hospital's entire database a question like "How many emergency visits happened this year?" or "Which doctors have the best patient reviews?" — and getting an instant, accurate answer in plain English, no technical knowledge needed.
+    description: `A smart chatbot built on top of real hospital data that understands natural language and finds the right answer from two sources: structured records and patient review text.
 
-That's exactly what this system does. It's a smart chatbot built on top of real hospital data that understands natural language and finds the right answer from two sources: structured records (like a super-powered spreadsheet) and patient review text (like reading through thousands of reviews at once).
-
-The system was designed and deployed as a real, working application — not just a prototype. It handles thousands of users simultaneously and has been measured at 92% response accuracy.`,
+Deployed as a real, working application — not just a prototype. It handles thousands of users simultaneously and has been measured at 92% response accuracy.`,
     whatItDoes: [
       'Answers questions about patients, doctors, hospitals, and billing in plain English',
-      'Reads and understands thousands of patient reviews to answer experience-based questions',
-      'Tells you real-time hospital wait times and which hospital has the shortest queue',
+      'Reads thousands of patient reviews to answer experience-based questions',
+      'Reports real-time hospital wait times and shortest queues',
       'Runs 24/7 on the cloud with 99.9% uptime',
     ],
-    techStack: [
-      { name: 'Python', desc: 'Core programming language' },
-      { name: 'GPT-4', desc: 'The AI brain that understands and answers questions' },
-      { name: 'LangChain', desc: 'Connects the AI to the database and tools' },
-      { name: 'Neo4j', desc: 'Graph database storing hospital relationships' },
-      { name: 'FastAPI', desc: 'High-speed web server handling requests' },
-      { name: 'Streamlit', desc: 'The chat interface you interact with' },
-      { name: 'Docker', desc: 'Packages everything so it runs anywhere' },
-      { name: 'AWS EC2', desc: 'Cloud server hosting the live application' },
-    ],
+    techStack: ['Python', 'GPT-4', 'LangChain', 'Neo4j', 'FastAPI', 'Streamlit', 'Docker', 'AWS EC2'],
     metrics: [
-      { label: 'Response Accuracy', value: '92%' },
-      { label: 'Patient Records', value: '10K+' },
-      { label: 'Query Latency Reduced', value: '75%' },
+      { label: 'Accuracy', value: '92%' },
+      { label: 'Records', value: '10K+' },
+      { label: 'Latency ↓', value: '75%' },
       { label: 'Uptime', value: '99.9%' },
     ],
-    color: 'from-blue-600 to-indigo-700',
+    accent: 'teal',
     icon: '🏥',
     tag: 'AI Chatbot · Live Demo',
   },
@@ -47,35 +36,24 @@ The system was designed and deployed as a real, working application — not just
     title: 'Turbofan Engine Predictive Maintenance',
     subtitle: 'Predicting engine failure before it happens — using NASA data',
     liveUrl: 'http://54.93.88.178:8501/',
-    dataset: 'NASA CMAPSS (Commercial Modular Aero-Propulsion System Simulation) dataset — 709 training engines, about 160,000 engine cycles, 21 sensors per engine cycle, across all four FD001–FD004 subsets.',
-    description: `Every machine has a lifespan — but knowing exactly when it will fail is the difference between a planned maintenance stop and a costly breakdown. This project answers one critical question: "How many more operating cycles does this engine have before it needs maintenance?"
+    dataset: 'NASA CMAPSS dataset — 709 training engines, ~160,000 engine cycles, 21 sensors per cycle, across all four FD001–FD004 subsets.',
+    description: `Answers one critical question: "How many more operating cycles does this engine have before it needs maintenance?"
 
-Using real NASA turbofan engine data, two AI models were trained and compared. Think of each engine like a patient whose vitals (21 sensors) are monitored every cycle. By engineering 45 rolling-window features and analyzing patterns across thousands of past engine life cycles, the models learned to predict how much life remains.
-
-The winning model (LSTM — a type of AI that learns from sequences over time) achieved significantly better accuracy than the XGBoost baseline, and was deployed as TensorFlow Lite on AWS Lambda behind a live cloud-based Streamlit dashboard where you can select any engine, see its sensor trends, and get an instant health prediction.`,
+45 rolling-window features were engineered across 21 sensors per cycle. The winning LSTM model beat the XGBoost baseline and was deployed as TensorFlow Lite on AWS Lambda behind a live Streamlit dashboard with a real-time RUL gauge and fleet monitoring for 20 engines.`,
     whatItDoes: [
       'Predicts Remaining Useful Life (RUL) of engines in cycles',
       'Shows real-time sensor trend charts for any engine',
-      'Color-coded health status: Green (healthy), Yellow (warning), Red (critical)',
-      'Fleet overview — monitor 20 engines at once on a single dashboard',
-      'Compares two AI models (XGBoost vs LSTM) side-by-side with proof',
+      'Color-coded health status: green / yellow / red',
+      'Fleet overview — monitor 20 engines at once',
     ],
-    techStack: [
-      { name: 'Python', desc: 'Core programming language' },
-      { name: 'LSTM (TensorFlow)', desc: 'Deep learning model that learns degradation patterns over time' },
-      { name: 'XGBoost', desc: 'Decision-tree model used as a comparison benchmark' },
-      { name: 'TensorFlow Lite', desc: 'Compressed model format deployed for fast inference' },
-      { name: 'AWS Lambda', desc: 'Serverless function that runs predictions on demand' },
-      { name: 'API Gateway', desc: 'Secure endpoint connecting the dashboard to the AI' },
-      { name: 'Streamlit', desc: 'Interactive dashboard with a live RUL gauge and fleet monitoring' },
-    ],
+    techStack: ['Python', 'LSTM (TensorFlow)', 'XGBoost', 'TensorFlow Lite', 'AWS Lambda', 'API Gateway', 'Streamlit'],
     metrics: [
-      { label: 'LSTM RMSE', value: '13.17 cycles' },
-      { label: 'XGBoost RMSE', value: '19.19 cycles' },
-      { label: 'NASA Score (LSTM)', value: '9,230' },
-      { label: 'Sensors Monitored', value: '21' },
+      { label: 'LSTM RMSE', value: '13.17' },
+      { label: 'XGB RMSE', value: '19.19' },
+      { label: 'NASA Score', value: '9,230' },
+      { label: 'Sensors', value: '21' },
     ],
-    color: 'from-rose-600 to-orange-600',
+    accent: 'amber',
     icon: '✈️',
     tag: 'Predictive Maintenance · Live Demo',
   },
@@ -98,13 +76,13 @@ const publications = [
   },
 ]
 
-const skills = {
-  'Programming': ['Python', 'SQL', 'R', 'Java'],
-  'Machine Learning': ['TensorFlow', 'XGBoost', 'LSTM Networks', 'Time-Series Modelling', 'Feature Engineering', 'Model Evaluation', 'EDA'],
-  'Generative AI (Concepts)': ['LLMs', 'Retrieval-Augmented Generation', 'Embeddings', 'Fine-Tuning'],
-  'Cloud & Data': ['AWS Redshift', 'AWS Glue', 'Amazon RDS', 'S3', 'Lambda', 'DynamoDB', 'CloudWatch', 'ETL', 'Data Migration'],
-  'Tools & Deployment': ['CI/CD', 'TensorFlow Lite', 'Streamlit'],
-}
+const skills = [
+  { category: 'Programming', items: ['Python', 'SQL', 'R', 'Java'], accent: 'teal' },
+  { category: 'Machine Learning', items: ['TensorFlow', 'XGBoost', 'LSTM Networks', 'Time-Series Modelling', 'Feature Engineering', 'EDA'], accent: 'amber' },
+  { category: 'Generative AI (Concepts)', items: ['LLMs', 'RAG', 'Embeddings', 'Fine-Tuning'], accent: 'rose' },
+  { category: 'Cloud & Data', items: ['Redshift', 'Glue', 'RDS', 'S3', 'Lambda', 'DynamoDB', 'CloudWatch', 'ETL'], accent: 'teal' },
+  { category: 'Tools & Deployment', items: ['CI/CD', 'TensorFlow Lite', 'Streamlit'], accent: 'amber' },
+]
 
 const experience = [
   {
@@ -113,12 +91,12 @@ const experience = [
     period: '01/2024 – 09/2025',
     bullets: [
       'Project: Data warehouse migration to AWS for City National Bank (USA); team of 3–5.',
-      "Traced the data lineage of the bank's legacy reporting views back to their source tables.",
+      "Traced data lineage of the bank's legacy reporting views back to their source tables.",
       'Migrated reporting tables and views from Amazon RDS to Redshift, rebuilding SQL logic and validating parity.',
       'Built and enhanced AWS Glue ETL jobs loading data into Redshift according to reporting business logic.',
-      'Refactored slow Redshift views with CTEs and restructured joins to reduce query runtimes for reporting.',
-      'Monitored Glue jobs with Amazon CloudWatch and maintained CI/CD pipelines that automated deployments.',
-      'Built an internal serverless proof of concept (S3, Lambda, DynamoDB) handling tens of thousands of records/day.',
+      'Refactored slow Redshift views with CTEs and restructured joins to reduce query runtimes.',
+      'Monitored Glue jobs with CloudWatch and maintained CI/CD pipelines that automated deployments.',
+      'Built an internal serverless PoC (S3, Lambda, DynamoDB) handling tens of thousands of records/day.',
     ],
   },
   {
@@ -132,152 +110,181 @@ const experience = [
   },
 ]
 
-// ── Components ────────────────────────────────────────────────────────────────
+const navLinks = ['Intro', 'About', 'Projects', 'Experience', 'Publications', 'Skills', 'Contact']
 
-function Navbar({ dark, setDark }) {
-  const [open, setOpen] = useState(false)
-  const links = ['About', 'Projects', 'Experience', 'Skills', 'Contact']
+const accentMap = {
+  teal: { ring: 'border-teal-500', text: 'text-teal-400', textLight: 'text-teal-600', bg: 'bg-teal-500', bgSoft: 'bg-teal-500/10', grad: 'from-teal-500 to-emerald-500' },
+  amber: { ring: 'border-amber-500', text: 'text-amber-400', textLight: 'text-amber-600', bg: 'bg-amber-500', bgSoft: 'bg-amber-500/10', grad: 'from-amber-500 to-orange-500' },
+  rose: { ring: 'border-rose-500', text: 'text-rose-400', textLight: 'text-rose-600', bg: 'bg-rose-500', bgSoft: 'bg-rose-500/10', grad: 'from-rose-500 to-pink-500' },
+}
 
+// ── Layout chrome ────────────────────────────────────────────────────────────
+
+function SectionHeading({ dark, eyebrow, title }) {
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 border-b ${dark ? 'bg-gray-900/95 border-gray-800' : 'bg-white/95 border-gray-200'} backdrop-blur-sm`}>
-      <div className="max-w-6xl mx-auto px-4 flex items-center justify-between h-16">
-        <span className={`font-bold text-lg ${dark ? 'text-white' : 'text-gray-900'}`}>
-          Tejaswi Bagepally
-        </span>
-        <div className="hidden md:flex items-center gap-6">
-          {links.map(l => (
+    <div className="mb-10 flex items-center gap-4">
+      <span className="h-8 w-1.5 rounded-full bg-gradient-to-b from-teal-500 to-amber-500 flex-shrink-0"></span>
+      <div>
+        {eyebrow && <p className={`text-xs font-bold uppercase tracking-[0.2em] mb-1 ${dark ? 'text-teal-400' : 'text-teal-600'}`}>{eyebrow}</p>}
+        <h2 className={`text-2xl md:text-3xl font-bold ${dark ? 'text-white' : 'text-slate-900'}`}>{title}</h2>
+      </div>
+    </div>
+  )
+}
+
+function Sidebar({ dark, setDark, mobileOpen, setMobileOpen }) {
+  const social = [
+    { label: 'Email', href: 'mailto:tejaswibagepally@gmail.com', icon: '✉️' },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/tejaswi-bagepalli-553a60202', icon: '💼' },
+    { label: 'GitHub', href: 'https://github.com/Tejaswi-2505', icon: '🐙' },
+  ]
+
+  const content = (
+    <div className={`flex flex-col h-full px-6 py-8 ${dark ? 'bg-slate-900' : 'bg-slate-50'}`}>
+      <div className="flex items-center gap-3 mb-1">
+        <img
+          src={photo}
+          alt="Tejaswi Bagepally"
+          className="w-16 h-16 rounded-2xl object-cover border-2 border-teal-500 shadow-lg"
+          style={{ objectPosition: '50% 12%' }}
+        />
+        <div>
+          <p className={`font-bold leading-tight ${dark ? 'text-white' : 'text-slate-900'}`}>Tejaswi<br/>Bagepally</p>
+        </div>
+      </div>
+      <p className={`text-xs mt-3 mb-8 ${dark ? 'text-slate-400' : 'text-slate-500'}`}>Data & ML Engineer</p>
+
+      <nav className="flex flex-col gap-1 mb-auto">
+        {navLinks.map(l => (
+          <a
+            key={l}
+            href={`#${l.toLowerCase()}`}
+            onClick={() => setMobileOpen(false)}
+            className={`text-sm font-medium px-3 py-2 rounded-lg transition-colors ${dark ? 'text-slate-300 hover:bg-slate-800 hover:text-teal-400' : 'text-slate-600 hover:bg-slate-200 hover:text-teal-600'}`}
+          >
+            {l}
+          </a>
+        ))}
+      </nav>
+
+      <div className="pt-6 mt-6 border-t border-slate-700/20">
+        <div className="flex gap-2 mb-4">
+          {social.map(s => (
             <a
-              key={l}
-              href={`#${l.toLowerCase()}`}
-              className={`text-sm font-medium transition-colors ${dark ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-gray-900'}`}
+              key={s.label}
+              href={s.href}
+              target={s.label !== 'Email' ? '_blank' : undefined}
+              rel="noopener noreferrer"
+              title={s.label}
+              className={`w-9 h-9 flex items-center justify-center rounded-lg text-base transition-colors ${dark ? 'bg-slate-800 hover:bg-slate-700' : 'bg-slate-200 hover:bg-slate-300'}`}
             >
-              {l}
+              {s.icon}
             </a>
           ))}
           <button
             onClick={() => setDark(!dark)}
-            className={`p-2 rounded-full transition-colors ${dark ? 'bg-gray-800 text-yellow-400 hover:bg-gray-700' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'}`}
+            className={`w-9 h-9 flex items-center justify-center rounded-lg transition-colors ${dark ? 'bg-slate-800 text-amber-400 hover:bg-slate-700' : 'bg-slate-200 text-slate-600 hover:bg-slate-300'}`}
             aria-label="Toggle theme"
           >
             {dark ? '☀️' : '🌙'}
           </button>
         </div>
-        <button className="md:hidden p-2" onClick={() => setOpen(!open)}>
-          <span className={`block w-6 h-0.5 mb-1.5 ${dark ? 'bg-white' : 'bg-gray-900'}`}></span>
-          <span className={`block w-6 h-0.5 mb-1.5 ${dark ? 'bg-white' : 'bg-gray-900'}`}></span>
-          <span className={`block w-6 h-0.5 ${dark ? 'bg-white' : 'bg-gray-900'}`}></span>
+        <a
+          href="/Tejaswi_Bagepally_Resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block text-center px-4 py-2.5 rounded-lg bg-gradient-to-r from-teal-500 to-emerald-500 text-white font-semibold text-sm hover:opacity-90 transition shadow-md"
+        >
+          Download Resume
+        </a>
+      </div>
+    </div>
+  )
+
+  return (
+    <>
+      {/* Desktop fixed sidebar */}
+      <aside className={`hidden md:block fixed left-0 top-0 bottom-0 w-64 border-r ${dark ? 'border-slate-800' : 'border-slate-200'} z-40`}>
+        {content}
+      </aside>
+
+      {/* Mobile top bar */}
+      <div className={`md:hidden fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 h-16 border-b ${dark ? 'bg-slate-900/95 border-slate-800' : 'bg-slate-50/95 border-slate-200'} backdrop-blur-sm`}>
+        <span className={`font-bold ${dark ? 'text-white' : 'text-slate-900'}`}>Tejaswi Bagepally</span>
+        <button onClick={() => setMobileOpen(!mobileOpen)} className="p-2">
+          <span className={`block w-6 h-0.5 mb-1.5 ${dark ? 'bg-white' : 'bg-slate-900'}`}></span>
+          <span className={`block w-6 h-0.5 mb-1.5 ${dark ? 'bg-white' : 'bg-slate-900'}`}></span>
+          <span className={`block w-6 h-0.5 ${dark ? 'bg-white' : 'bg-slate-900'}`}></span>
         </button>
       </div>
-      {open && (
-        <div className={`md:hidden px-4 pb-4 ${dark ? 'bg-gray-900' : 'bg-white'}`}>
-          {links.map(l => (
-            <a
-              key={l}
-              href={`#${l.toLowerCase()}`}
-              onClick={() => setOpen(false)}
-              className={`block py-2 text-sm font-medium ${dark ? 'text-gray-300' : 'text-gray-700'}`}
-            >
-              {l}
-            </a>
-          ))}
-          <button onClick={() => setDark(!dark)} className="mt-2 text-sm">
-            {dark ? '☀️ Light Mode' : '🌙 Dark Mode'}
-          </button>
+      {mobileOpen && (
+        <div className="md:hidden fixed top-16 left-0 right-0 bottom-0 z-40">
+          {content}
         </div>
       )}
-    </nav>
+    </>
   )
 }
 
-function Hero({ dark }) {
+function Intro({ dark }) {
   return (
-    <section className="pt-24 pb-16 px-4 max-w-6xl mx-auto">
-      <div className="flex flex-col md:flex-row items-center gap-12">
-        <div className="flex-shrink-0">
-          <div className="relative">
-            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 blur-md opacity-40 scale-105"></div>
-            <img
-              src={photo}
-              alt="Tejaswi Bagepally"
-              className="relative w-44 h-44 rounded-full object-cover border-4 border-white shadow-2xl"
-              style={{ objectPosition: '50% 12%' }}
-            />
-          </div>
-        </div>
-        <div className="text-center md:text-left">
-          <p className={`text-sm font-semibold uppercase tracking-widest mb-3 ${dark ? 'text-blue-400' : 'text-blue-600'}`}>
-            M.Eng. Applied AI · Deggendorf Institute of Technology · Lappersdorf, Germany
-          </p>
-          <h1 className={`text-4xl md:text-5xl font-bold mb-4 leading-tight ${dark ? 'text-white' : 'text-gray-900'}`}>
-            Tejaswi Bagepally
-          </h1>
-          <p className={`text-xl md:text-2xl font-medium mb-6 ${dark ? 'text-gray-300' : 'text-gray-600'}`}>
-            Data & ML Engineer
-          </p>
-          <p className={`text-base leading-relaxed max-w-2xl mb-8 ${dark ? 'text-gray-400' : 'text-gray-600'}`}>
-            Master's student in Applied AI with nearly two years of production AWS data engineering for a US banking client (Glue, Redshift, CloudWatch, CI/CD) and hands-on ML deployment (LSTM, XGBoost, TensorFlow Lite on Lambda).
-          </p>
-          <div className="flex flex-wrap gap-3 justify-center md:justify-start">
-            <a href="#projects" className="px-6 py-3 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold text-sm hover:opacity-90 transition shadow-lg">
-              View Projects
-            </a>
-            <a href="/Tejaswi_Bagepally_Resume.pdf" target="_blank" rel="noopener noreferrer" className={`px-6 py-3 rounded-full font-semibold text-sm border transition ${dark ? 'border-gray-600 text-gray-300 hover:border-gray-400' : 'border-gray-300 text-gray-700 hover:border-gray-500'}`}>
-              Download Resume
-            </a>
-            <a href="mailto:tejaswibagepally@gmail.com" className={`px-6 py-3 rounded-full font-semibold text-sm border transition ${dark ? 'border-gray-600 text-gray-300 hover:border-gray-400' : 'border-gray-300 text-gray-700 hover:border-gray-500'}`}>
-              Get In Touch
-            </a>
-          </div>
-        </div>
+    <section id="intro" className="pt-28 md:pt-20 pb-16">
+      <p className={`text-sm font-semibold uppercase tracking-widest mb-4 ${dark ? 'text-amber-400' : 'text-amber-600'}`}>
+        M.Eng. Applied AI · Deggendorf Institute of Technology
+      </p>
+      <h1 className={`text-4xl md:text-6xl font-bold mb-6 leading-[1.1] ${dark ? 'text-white' : 'text-slate-900'}`}>
+        Hi, I'm Tejaswi.<br/>
+        <span className="bg-gradient-to-r from-teal-500 to-amber-500 bg-clip-text text-transparent">I build AI systems that ship.</span>
+      </h1>
+      <p className={`text-lg leading-relaxed max-w-2xl mb-8 ${dark ? 'text-slate-400' : 'text-slate-600'}`}>
+        Master's student in Applied AI with nearly two years of production AWS data engineering for a US banking client (Glue, Redshift, CloudWatch, CI/CD) and hands-on ML deployment (LSTM, XGBoost, TensorFlow Lite on Lambda). Based in Lappersdorf, Germany.
+      </p>
+      <div className="flex flex-wrap gap-3">
+        <a href="#projects" className="px-6 py-3 rounded-lg bg-gradient-to-r from-teal-500 to-emerald-500 text-white font-semibold text-sm hover:opacity-90 transition shadow-lg">
+          View Projects →
+        </a>
+        <a href="#contact" className={`px-6 py-3 rounded-lg font-semibold text-sm border transition ${dark ? 'border-slate-700 text-slate-300 hover:border-slate-500' : 'border-slate-300 text-slate-700 hover:border-slate-500'}`}>
+          Get In Touch
+        </a>
       </div>
     </section>
   )
 }
 
 function About({ dark }) {
-  const certs = [
-    { name: 'AWS Certified Solutions Architect – Associate', icon: '☁️' },
-    { name: 'AWS Certified Data Engineer – Associate', icon: '🗄️' },
-    { name: 'AWS Certified AI Practitioner', icon: '🤖' },
-  ]
+  const certs = ['AWS Certified Solutions Architect – Associate', 'AWS Certified Data Engineer – Associate', 'AWS Certified AI Practitioner']
   return (
-    <section id="about" className={`py-20 px-4 ${dark ? 'bg-gray-800/50' : 'bg-gray-50'}`}>
-      <div className="max-w-6xl mx-auto">
-        <h2 className={`text-3xl font-bold text-center mb-12 ${dark ? 'text-white' : 'text-gray-900'}`}>About Me</h2>
-        <div className="grid md:grid-cols-2 gap-12 items-start">
-          <div>
-            <p className={`text-base leading-relaxed mb-4 ${dark ? 'text-gray-300' : 'text-gray-600'}`}>
-              I'm a Master's student in Applied AI for Digital Production Management at Deggendorf Institute of Technology, building on nearly two years as an Associate Engineer in AWS data engineering at Virtusa, where I worked on a data warehouse migration for City National Bank (USA) — tracing data lineage, migrating RDS reporting views to Redshift, and building Glue ETL pipelines monitored with CloudWatch and CI/CD.
-            </p>
-            <p className={`text-base leading-relaxed mb-4 ${dark ? 'text-gray-300' : 'text-gray-600'}`}>
-              Alongside production data engineering, I build and deploy machine learning systems end to end — from LSTM and XGBoost models for time-series prediction to TensorFlow Lite deployments on AWS Lambda and live Streamlit dashboards. I'm AWS triple-certified (Solutions Architect, Data Engineer, AI Practitioner) and have a published IEEE paper on multilingual OCR.
-            </p>
-            <p className={`text-base leading-relaxed ${dark ? 'text-gray-300' : 'text-gray-600'}`}>
-              I'm fluent in English, Hindi, and Telugu, and am actively improving my German (A2) while based in Lappersdorf, Germany.
-            </p>
+    <section id="about" className="py-16">
+      <SectionHeading dark={dark} eyebrow="Background" title="About Me" />
+      <div className="grid md:grid-cols-5 gap-10">
+        <div className="md:col-span-3 space-y-4">
+          <p className={`text-base leading-relaxed ${dark ? 'text-slate-300' : 'text-slate-600'}`}>
+            I'm a Master's student in Applied AI for Digital Production Management at Deggendorf Institute of Technology, building on nearly two years as an Associate Engineer in AWS data engineering at Virtusa, where I worked on a data warehouse migration for City National Bank (USA) — tracing data lineage, migrating RDS reporting views to Redshift, and building Glue ETL pipelines monitored with CloudWatch and CI/CD.
+          </p>
+          <p className={`text-base leading-relaxed ${dark ? 'text-slate-300' : 'text-slate-600'}`}>
+            Alongside production data engineering, I build and deploy machine learning systems end to end — from LSTM and XGBoost models for time-series prediction to TensorFlow Lite deployments on AWS Lambda and live Streamlit dashboards. I'm AWS triple-certified and have a published IEEE paper on multilingual OCR.
+          </p>
+          <p className={`text-base leading-relaxed ${dark ? 'text-slate-300' : 'text-slate-600'}`}>
+            Fluent in English, Hindi, and Telugu; actively improving German (A2).
+          </p>
+        </div>
+        <div className="md:col-span-2 space-y-5">
+          <div className={`rounded-xl p-5 border-l-4 border-teal-500 ${dark ? 'bg-slate-800/60' : 'bg-slate-50'}`}>
+            <p className={`font-bold text-sm ${dark ? 'text-white' : 'text-slate-900'}`}>Deggendorf Institute of Technology</p>
+            <p className={`text-sm ${dark ? 'text-teal-400' : 'text-teal-600'}`}>M.Eng. Applied AI for Digital Production Management</p>
+            <p className={`text-xs mt-1 ${dark ? 'text-slate-500' : 'text-slate-500'}`}>10/2025 – Present</p>
           </div>
-          <div>
-            <h3 className={`text-lg font-semibold mb-4 ${dark ? 'text-white' : 'text-gray-800'}`}>Education</h3>
-            <div className={`rounded-xl p-5 mb-4 border ${dark ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'} shadow-sm`}>
-              <p className={`font-bold ${dark ? 'text-white' : 'text-gray-900'}`}>Deggendorf Institute of Technology</p>
-              <p className={`text-sm ${dark ? 'text-blue-400' : 'text-blue-600'}`}>M.Eng. Applied AI for Digital Production Management</p>
-              <p className={`text-sm mt-1 ${dark ? 'text-gray-400' : 'text-gray-500'}`}>10/2025 – Present · Germany</p>
-              <p className={`text-sm mt-2 ${dark ? 'text-gray-400' : 'text-gray-500'}`}>Machine Learning & Deep Learning · Advanced Statistical Methods & Optimisation · Data Management · Advanced Intelligent Systems</p>
-            </div>
-            <div className={`rounded-xl p-5 mb-6 border ${dark ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'} shadow-sm`}>
-              <p className={`font-bold ${dark ? 'text-white' : 'text-gray-900'}`}>MLR Institute of Technology</p>
-              <p className={`text-sm ${dark ? 'text-blue-400' : 'text-blue-600'}`}>B.Tech Computer Science Engineering (German grade: 2.02)</p>
-              <p className={`text-sm mt-1 ${dark ? 'text-gray-400' : 'text-gray-500'}`}>08/2019 – 08/2023 · Hyderabad, India</p>
-            </div>
-            <h3 className={`text-lg font-semibold mb-4 ${dark ? 'text-white' : 'text-gray-800'}`}>Certifications</h3>
-            <div className="space-y-3">
-              {certs.map(c => (
-                <div key={c.name} className={`flex items-center gap-3 rounded-xl p-4 border ${dark ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'} shadow-sm`}>
-                  <span className="text-2xl">{c.icon}</span>
-                  <span className={`text-sm font-medium ${dark ? 'text-gray-200' : 'text-gray-800'}`}>{c.name}</span>
-                </div>
-              ))}
-            </div>
+          <div className={`rounded-xl p-5 border-l-4 border-amber-500 ${dark ? 'bg-slate-800/60' : 'bg-slate-50'}`}>
+            <p className={`font-bold text-sm ${dark ? 'text-white' : 'text-slate-900'}`}>MLR Institute of Technology</p>
+            <p className={`text-sm ${dark ? 'text-amber-400' : 'text-amber-600'}`}>B.Tech CSE · grade 2.02</p>
+            <p className={`text-xs mt-1 ${dark ? 'text-slate-500' : 'text-slate-500'}`}>08/2019 – 08/2023 · Hyderabad</p>
+          </div>
+          <div className="space-y-2">
+            {certs.map(c => (
+              <div key={c} className={`flex items-center gap-2 text-xs font-medium px-3 py-2 rounded-lg ${dark ? 'bg-slate-800 text-slate-300' : 'bg-slate-100 text-slate-700'}`}>
+                <span className="text-teal-400">✓</span>{c}
+              </div>
+            ))}
           </div>
         </div>
       </div>
@@ -287,116 +294,72 @@ function About({ dark }) {
 
 function ProjectCard({ project, dark }) {
   const [expanded, setExpanded] = useState(false)
+  const a = accentMap[project.accent]
 
   return (
-    <div className={`rounded-2xl overflow-hidden border shadow-lg transition-all hover:shadow-xl ${dark ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'}`}>
-      {/* Header gradient bar */}
-      <div className={`h-2 bg-gradient-to-r ${project.color}`}></div>
-
-      <div className="p-6 md:p-8">
-        {/* Top row */}
-        <div className="flex flex-wrap items-start justify-between gap-4 mb-4">
-          <div className="flex items-center gap-3">
-            <span className="text-3xl">{project.icon}</span>
-            <div>
-              <span className={`text-xs font-semibold uppercase tracking-wider px-2 py-1 rounded-full ${dark ? 'bg-gray-700 text-gray-300' : 'bg-gray-100 text-gray-600'}`}>
-                {project.tag}
-              </span>
-            </div>
-          </div>
+    <div className={`rounded-2xl border-t-4 ${a.ring} border-x border-b overflow-hidden shadow-sm hover:shadow-xl transition-shadow ${dark ? 'bg-slate-800/60 border-slate-700' : 'bg-white border-slate-200'}`}>
+      <div className="p-6">
+        <div className="flex items-start justify-between gap-3 mb-3">
+          <span className="text-3xl">{project.icon}</span>
           {project.liveUrl && (
             <a
               href={project.liveUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold bg-gradient-to-r ${project.color} text-white hover:opacity-90 transition shadow-md`}
+              className={`text-xs font-semibold px-3 py-1.5 rounded-full text-white bg-gradient-to-r ${a.grad} hover:opacity-90 transition flex items-center gap-1.5`}
             >
-              <span className="w-2 h-2 bg-white rounded-full animate-pulse inline-block"></span>
-              Live Demo
+              <span className="w-1.5 h-1.5 bg-white rounded-full animate-pulse"></span>Live Demo
             </a>
           )}
         </div>
+        <p className={`text-xs font-semibold uppercase tracking-wider mb-2 ${a.text}`}>{project.tag}</p>
+        <h3 className={`text-lg font-bold mb-1 ${dark ? 'text-white' : 'text-slate-900'}`}>{project.title}</h3>
+        <p className={`text-sm mb-4 ${dark ? 'text-slate-400' : 'text-slate-500'}`}>{project.subtitle}</p>
 
-        <h3 className={`text-xl md:text-2xl font-bold mb-2 ${dark ? 'text-white' : 'text-gray-900'}`}>
-          {project.title}
-        </h3>
-        <p className={`text-base mb-4 ${dark ? 'text-gray-400' : 'text-gray-500'}`}>
-          {project.subtitle}
-        </p>
-
-        {/* Metrics */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
+        <div className="grid grid-cols-4 gap-2 mb-4">
           {project.metrics.map(m => (
-            <div key={m.label} className={`rounded-xl p-3 text-center ${dark ? 'bg-gray-700/60' : 'bg-gray-50'}`}>
-              <p className={`text-lg font-bold ${dark ? 'text-white' : 'text-gray-900'}`}>{m.value}</p>
-              <p className={`text-xs mt-1 ${dark ? 'text-gray-400' : 'text-gray-500'}`}>{m.label}</p>
+            <div key={m.label} className={`rounded-lg py-2 text-center ${a.bgSoft}`}>
+              <p className={`text-sm font-bold ${dark ? 'text-white' : 'text-slate-900'}`}>{m.value}</p>
+              <p className={`text-[10px] mt-0.5 ${dark ? 'text-slate-400' : 'text-slate-500'}`}>{m.label}</p>
             </div>
           ))}
         </div>
 
-        {/* Description */}
-        <div className={`rounded-xl p-4 mb-5 ${dark ? 'bg-gray-700/40' : 'bg-gray-50'}`}>
-          <p className={`text-sm leading-relaxed whitespace-pre-line ${dark ? 'text-gray-300' : 'text-gray-700'}`}>
-            {project.description}
-          </p>
+        <p className={`text-sm leading-relaxed whitespace-pre-line mb-4 ${dark ? 'text-slate-300' : 'text-slate-700'}`}>
+          {project.description}
+        </p>
+
+        <div className="flex flex-wrap gap-1.5 mb-4">
+          {project.techStack.map(t => (
+            <span key={t} className={`text-[11px] font-medium px-2.5 py-1 rounded-full ${dark ? 'bg-slate-700 text-slate-200' : 'bg-slate-100 text-slate-700'}`}>
+              {t}
+            </span>
+          ))}
         </div>
 
-        {/* Expand toggle */}
         <button
           onClick={() => setExpanded(!expanded)}
-          className={`text-sm font-medium mb-4 flex items-center gap-1 transition-colors ${dark ? 'text-blue-400 hover:text-blue-300' : 'text-blue-600 hover:text-blue-700'}`}
+          className={`text-xs font-semibold ${a.text}`}
         >
-          {expanded ? '▲ Show less' : '▼ Show more details'}
+          {expanded ? '▲ Less' : '▼ What it does & data source'}
         </button>
 
         {expanded && (
-          <div className="space-y-6">
-            {/* Dataset */}
+          <div className="mt-4 space-y-4">
             <div>
-              <h4 className={`text-sm font-bold uppercase tracking-wider mb-2 ${dark ? 'text-gray-400' : 'text-gray-500'}`}>
-                📦 Data Source
-              </h4>
-              <p className={`text-sm leading-relaxed ${dark ? 'text-gray-300' : 'text-gray-700'}`}>
-                {project.dataset}
-              </p>
+              <h4 className={`text-xs font-bold uppercase tracking-wider mb-1.5 ${dark ? 'text-slate-400' : 'text-slate-500'}`}>Data Source</h4>
+              <p className={`text-sm leading-relaxed ${dark ? 'text-slate-300' : 'text-slate-700'}`}>{project.dataset}</p>
             </div>
-
-            {/* What it does */}
             <div>
-              <h4 className={`text-sm font-bold uppercase tracking-wider mb-3 ${dark ? 'text-gray-400' : 'text-gray-500'}`}>
-                ✅ What It Does
-              </h4>
-              <ul className="space-y-2">
+              <h4 className={`text-xs font-bold uppercase tracking-wider mb-1.5 ${dark ? 'text-slate-400' : 'text-slate-500'}`}>What It Does</h4>
+              <ul className="space-y-1.5">
                 {project.whatItDoes.map((item, i) => (
                   <li key={i} className="flex items-start gap-2">
-                    <span className={`mt-1 w-1.5 h-1.5 rounded-full flex-shrink-0 bg-gradient-to-r ${project.color}`}></span>
-                    <span className={`text-sm ${dark ? 'text-gray-300' : 'text-gray-700'}`}>{item}</span>
+                    <span className={`mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0 ${a.bg}`}></span>
+                    <span className={`text-sm ${dark ? 'text-slate-300' : 'text-slate-700'}`}>{item}</span>
                   </li>
                 ))}
               </ul>
-            </div>
-
-            {/* Tech stack */}
-            <div>
-              <h4 className={`text-sm font-bold uppercase tracking-wider mb-3 ${dark ? 'text-gray-400' : 'text-gray-500'}`}>
-                🛠️ Technologies Used
-              </h4>
-              <div className="flex flex-wrap gap-2">
-                {project.techStack.map(t => (
-                  <div
-                    key={t.name}
-                    className={`group relative px-3 py-1.5 rounded-full text-xs font-semibold cursor-default transition-all ${dark ? 'bg-gray-700 text-gray-200 hover:bg-gray-600' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'}`}
-                  >
-                    {t.name}
-                    <div className={`absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-3 py-1.5 rounded-lg text-xs w-48 text-center opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10 shadow-lg ${dark ? 'bg-gray-900 text-gray-200' : 'bg-gray-800 text-white'}`}>
-                      {t.desc}
-                    </div>
-                  </div>
-                ))}
-              </div>
-              <p className={`text-xs mt-2 italic ${dark ? 'text-gray-500' : 'text-gray-400'}`}>
-                Hover over each technology to learn what it does
-              </p>
             </div>
           </div>
         )}
@@ -407,17 +370,10 @@ function ProjectCard({ project, dark }) {
 
 function Projects({ dark }) {
   return (
-    <section id="projects" className="py-20 px-4">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-14">
-          <h2 className={`text-3xl font-bold mb-4 ${dark ? 'text-white' : 'text-gray-900'}`}>Projects</h2>
-          <p className={`text-base max-w-2xl mx-auto ${dark ? 'text-gray-400' : 'text-gray-600'}`}>
-            Two end-to-end AI systems with live demos you can interact with right now. Click "Show more details" on any card to dive deeper.
-          </p>
-        </div>
-        <div className="space-y-8">
-          {projects.map(p => <ProjectCard key={p.id} project={p} dark={dark} />)}
-        </div>
+    <section id="projects" className="py-16">
+      <SectionHeading dark={dark} eyebrow="Selected Work" title="Projects" />
+      <div className="grid md:grid-cols-2 gap-6">
+        {projects.map(p => <ProjectCard key={p.id} project={p} dark={dark} />)}
       </div>
     </section>
   )
@@ -425,38 +381,35 @@ function Projects({ dark }) {
 
 function Experience({ dark }) {
   return (
-    <section id="experience" className={`py-20 px-4 ${dark ? 'bg-gray-800/50' : 'bg-gray-50'}`}>
-      <div className="max-w-6xl mx-auto">
-        <h2 className={`text-3xl font-bold text-center mb-14 ${dark ? 'text-white' : 'text-gray-900'}`}>Experience</h2>
-        <div className="relative">
-          <div className={`absolute left-4 top-0 bottom-0 w-0.5 ${dark ? 'bg-gray-700' : 'bg-gray-200'}`}></div>
-          <div className="space-y-10 pl-12">
-            {experience.map((exp, i) => (
-              <div key={i} className="relative">
-                <div className={`absolute -left-9 w-4 h-4 rounded-full border-2 mt-1 ${dark ? 'bg-gray-900 border-blue-500' : 'bg-white border-blue-500'}`}></div>
-                <div className={`rounded-xl p-6 border ${dark ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'} shadow-sm`}>
-                  <div className="flex flex-wrap items-start justify-between gap-2 mb-3">
-                    <div>
-                      <h3 className={`font-bold text-base ${dark ? 'text-white' : 'text-gray-900'}`}>{exp.role}</h3>
-                      <p className={`text-sm ${dark ? 'text-blue-400' : 'text-blue-600'}`}>{exp.company}</p>
-                    </div>
-                    <span className={`text-xs px-3 py-1 rounded-full font-medium ${dark ? 'bg-gray-700 text-gray-300' : 'bg-gray-100 text-gray-600'}`}>
-                      {exp.period}
-                    </span>
-                  </div>
-                  <ul className="space-y-2">
-                    {exp.bullets.map((b, j) => (
-                      <li key={j} className="flex items-start gap-2">
-                        <span className="text-blue-500 mt-1 flex-shrink-0">›</span>
-                        <span className={`text-sm leading-relaxed ${dark ? 'text-gray-300' : 'text-gray-600'}`}>{b}</span>
-                      </li>
-                    ))}
-                  </ul>
+    <section id="experience" className="py-16">
+      <SectionHeading dark={dark} eyebrow="Career" title="Experience" />
+      <div className="space-y-5">
+        {experience.map((exp, i) => (
+          <div key={i} className={`rounded-xl p-6 flex gap-5 ${dark ? 'bg-slate-800/60' : 'bg-slate-50'}`}>
+            <div className={`flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm ${dark ? 'bg-slate-700 text-teal-400' : 'bg-white text-teal-600 shadow-sm'}`}>
+              {String(i + 1).padStart(2, '0')}
+            </div>
+            <div className="flex-1">
+              <div className="flex flex-wrap items-start justify-between gap-2 mb-3">
+                <div>
+                  <h3 className={`font-bold text-base ${dark ? 'text-white' : 'text-slate-900'}`}>{exp.role}</h3>
+                  <p className={`text-sm ${dark ? 'text-teal-400' : 'text-teal-600'}`}>{exp.company}</p>
                 </div>
+                <span className={`text-xs px-3 py-1 rounded-full font-medium ${dark ? 'bg-slate-700 text-slate-300' : 'bg-white text-slate-600 shadow-sm'}`}>
+                  {exp.period}
+                </span>
               </div>
-            ))}
+              <ul className="space-y-1.5">
+                {exp.bullets.map((b, j) => (
+                  <li key={j} className="flex items-start gap-2">
+                    <span className="text-amber-500 mt-1 flex-shrink-0">›</span>
+                    <span className={`text-sm leading-relaxed ${dark ? 'text-slate-300' : 'text-slate-600'}`}>{b}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
-        </div>
+        ))}
       </div>
     </section>
   )
@@ -464,29 +417,25 @@ function Experience({ dark }) {
 
 function Publications({ dark }) {
   return (
-    <section id="publications" className="py-20 px-4">
-      <div className="max-w-6xl mx-auto">
-        <h2 className={`text-3xl font-bold text-center mb-14 ${dark ? 'text-white' : 'text-gray-900'}`}>Publications & Writing</h2>
-        <div className="grid md:grid-cols-2 gap-6">
-          {publications.map(p => (
-            <a
-              key={p.title}
-              href={p.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`block rounded-xl p-6 border transition-all hover:shadow-lg hover:-translate-y-0.5 ${dark ? 'bg-gray-800 border-gray-700 hover:border-blue-500' : 'bg-white border-gray-200 hover:border-blue-400'}`}
-            >
-              <div className="flex items-start gap-3 mb-2">
-                <span className="text-2xl">{p.icon}</span>
-                <div>
-                  <h3 className={`font-bold text-base ${dark ? 'text-white' : 'text-gray-900'}`}>{p.title}</h3>
-                  <p className={`text-sm ${dark ? 'text-blue-400' : 'text-blue-600'}`}>{p.venue}</p>
-                </div>
-              </div>
-              <p className={`text-sm leading-relaxed ${dark ? 'text-gray-400' : 'text-gray-600'}`}>{p.desc}</p>
-            </a>
-          ))}
-        </div>
+    <section id="publications" className="py-16">
+      <SectionHeading dark={dark} eyebrow="Writing" title="Publications" />
+      <div className="space-y-4">
+        {publications.map(p => (
+          <a
+            key={p.title}
+            href={p.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`flex items-start gap-4 rounded-xl p-5 transition-all hover:-translate-y-0.5 ${dark ? 'bg-slate-800/60 hover:bg-slate-800' : 'bg-slate-50 hover:bg-slate-100'}`}
+          >
+            <span className="text-2xl flex-shrink-0">{p.icon}</span>
+            <div>
+              <h3 className={`font-bold text-sm ${dark ? 'text-white' : 'text-slate-900'}`}>{p.title}</h3>
+              <p className={`text-xs mb-1.5 ${dark ? 'text-teal-400' : 'text-teal-600'}`}>{p.venue}</p>
+              <p className={`text-sm leading-relaxed ${dark ? 'text-slate-400' : 'text-slate-600'}`}>{p.desc}</p>
+            </div>
+          </a>
+        ))}
       </div>
     </section>
   )
@@ -494,28 +443,24 @@ function Publications({ dark }) {
 
 function Skills({ dark }) {
   return (
-    <section id="skills" className={`py-20 px-4 ${dark ? 'bg-gray-800/50' : 'bg-gray-50'}`}>
-      <div className="max-w-6xl mx-auto">
-        <h2 className={`text-3xl font-bold text-center mb-14 ${dark ? 'text-white' : 'text-gray-900'}`}>Technical Skills</h2>
-        <div className="grid md:grid-cols-2 gap-6">
-          {Object.entries(skills).map(([category, items]) => (
-            <div key={category} className={`rounded-xl p-6 border ${dark ? 'bg-gray-800 border-gray-700' : 'bg-white border-gray-200'} shadow-sm`}>
-              <h3 className={`font-semibold text-sm uppercase tracking-wider mb-4 ${dark ? 'text-gray-400' : 'text-gray-500'}`}>
-                {category}
-              </h3>
+    <section id="skills" className="py-16">
+      <SectionHeading dark={dark} eyebrow="Toolbox" title="Technical Skills" />
+      <div className="space-y-4">
+        {skills.map(group => {
+          const a = accentMap[group.accent]
+          return (
+            <div key={group.category} className="flex flex-col md:flex-row md:items-center gap-3">
+              <span className={`text-xs font-bold uppercase tracking-wider w-44 flex-shrink-0 ${a.text}`}>{group.category}</span>
               <div className="flex flex-wrap gap-2">
-                {items.map(skill => (
-                  <span
-                    key={skill}
-                    className={`px-3 py-1.5 rounded-full text-sm font-medium ${dark ? 'bg-gray-700 text-gray-200' : 'bg-gray-100 text-gray-700'}`}
-                  >
+                {group.items.map(skill => (
+                  <span key={skill} className={`text-sm font-medium px-3 py-1.5 rounded-lg ${a.bgSoft} ${dark ? 'text-slate-200' : 'text-slate-700'}`}>
                     {skill}
                   </span>
                 ))}
               </div>
             </div>
-          ))}
-        </div>
+          )
+        })}
       </div>
     </section>
   )
@@ -523,66 +468,38 @@ function Skills({ dark }) {
 
 function Contact({ dark }) {
   const links = [
-    {
-      label: 'Email',
-      value: 'tejaswibagepally@gmail.com',
-      href: 'mailto:tejaswibagepally@gmail.com',
-      icon: '✉️',
-    },
-    {
-      label: 'LinkedIn',
-      value: 'tejaswi-bagepalli',
-      href: 'https://www.linkedin.com/in/tejaswi-bagepalli-553a60202',
-      icon: '💼',
-    },
-    {
-      label: 'GitHub',
-      value: 'Tejaswi-2505',
-      href: 'https://github.com/Tejaswi-2505',
-      icon: '🐙',
-    },
+    { label: 'Email', value: 'tejaswibagepally@gmail.com', href: 'mailto:tejaswibagepally@gmail.com', icon: '✉️' },
+    { label: 'LinkedIn', value: 'tejaswi-bagepalli', href: 'https://www.linkedin.com/in/tejaswi-bagepalli-553a60202', icon: '💼' },
+    { label: 'GitHub', value: 'Tejaswi-2505', href: 'https://github.com/Tejaswi-2505', icon: '🐙' },
   ]
 
   return (
-    <section id="contact" className="py-20 px-4">
-      <div className="max-w-4xl mx-auto text-center">
-        <h2 className={`text-3xl font-bold mb-4 ${dark ? 'text-white' : 'text-gray-900'}`}>Get In Touch</h2>
-        <p className={`text-base mb-12 max-w-xl mx-auto ${dark ? 'text-gray-400' : 'text-gray-600'}`}>
-          Master's student in Applied AI, based in Lappersdorf, Germany. Open to opportunities in data engineering and ML. Let's connect.
-        </p>
-        <div className="grid md:grid-cols-3 gap-4 mb-6">
-          {links.map(l => (
-            <a
-              key={l.label}
-              href={l.href}
-              target={l.label !== 'Email' ? '_blank' : undefined}
-              rel="noopener noreferrer"
-              className={`flex flex-col items-center gap-3 p-6 rounded-2xl border transition-all hover:shadow-lg hover:-translate-y-1 ${dark ? 'bg-gray-800 border-gray-700 hover:border-blue-500' : 'bg-white border-gray-200 hover:border-blue-400'}`}
-            >
-              <span className="text-4xl">{l.icon}</span>
-              <span className={`text-sm font-bold uppercase tracking-wider ${dark ? 'text-gray-400' : 'text-gray-500'}`}>{l.label}</span>
-              <span className={`text-sm break-all ${dark ? 'text-blue-400' : 'text-blue-600'}`}>{l.value}</span>
-            </a>
-          ))}
-        </div>
-        <a
-          href="/Tejaswi_Bagepally_Resume.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block px-6 py-3 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold text-sm hover:opacity-90 transition shadow-lg"
-        >
-          Download Resume (PDF)
-        </a>
+    <section id="contact" className="py-16 pb-24">
+      <SectionHeading dark={dark} eyebrow="Say Hello" title="Get In Touch" />
+      <p className={`text-base mb-8 max-w-xl ${dark ? 'text-slate-400' : 'text-slate-600'}`}>
+        Master's student in Applied AI, open to opportunities in data engineering and ML. Let's connect.
+      </p>
+      <div className="flex flex-col gap-3 max-w-md">
+        {links.map(l => (
+          <a
+            key={l.label}
+            href={l.href}
+            target={l.label !== 'Email' ? '_blank' : undefined}
+            rel="noopener noreferrer"
+            className={`flex items-center gap-4 p-4 rounded-xl transition-all hover:-translate-y-0.5 ${dark ? 'bg-slate-800/60 hover:bg-slate-800' : 'bg-slate-50 hover:bg-slate-100'}`}
+          >
+            <span className="text-2xl">{l.icon}</span>
+            <div>
+              <p className={`text-xs font-bold uppercase tracking-wider ${dark ? 'text-slate-500' : 'text-slate-500'}`}>{l.label}</p>
+              <p className={`text-sm font-medium ${dark ? 'text-teal-400' : 'text-teal-600'}`}>{l.value}</p>
+            </div>
+          </a>
+        ))}
       </div>
+      <p className={`text-xs mt-10 ${dark ? 'text-slate-600' : 'text-slate-400'}`}>
+        Built by Tejaswi Bagepally · {new Date().getFullYear()}
+      </p>
     </section>
-  )
-}
-
-function Footer({ dark }) {
-  return (
-    <footer className={`py-8 text-center text-sm ${dark ? 'text-gray-500 border-t border-gray-800' : 'text-gray-400 border-t border-gray-200'}`}>
-      <p>Built by Tejaswi Bagepally · {new Date().getFullYear()}</p>
-    </footer>
   )
 }
 
@@ -590,6 +507,7 @@ function Footer({ dark }) {
 
 export default function App() {
   const [dark, setDark] = useState(false)
+  const [mobileOpen, setMobileOpen] = useState(false)
 
   useEffect(() => {
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
@@ -597,10 +515,10 @@ export default function App() {
   }, [])
 
   return (
-    <div className={`min-h-screen transition-colors duration-300 ${dark ? 'bg-gray-900' : 'bg-white'}`}>
-      <Navbar dark={dark} setDark={setDark} />
-      <main>
-        <Hero dark={dark} />
+    <div className={`min-h-screen transition-colors duration-300 ${dark ? 'bg-slate-950' : 'bg-white'}`}>
+      <Sidebar dark={dark} setDark={setDark} mobileOpen={mobileOpen} setMobileOpen={setMobileOpen} />
+      <main className="md:ml-64 px-6 md:px-14 max-w-4xl">
+        <Intro dark={dark} />
         <About dark={dark} />
         <Projects dark={dark} />
         <Experience dark={dark} />
@@ -608,7 +526,6 @@ export default function App() {
         <Skills dark={dark} />
         <Contact dark={dark} />
       </main>
-      <Footer dark={dark} />
     </div>
   )
 }
